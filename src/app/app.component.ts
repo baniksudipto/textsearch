@@ -9,7 +9,7 @@ import {Trie} from './models/trie';
 })
 export class AppComponent implements OnInit {
   title = 'textsearch';
-  textData = 'hi hola hello';
+  textData = '';
   words: string[] = [];
   highlighted: Set<number> = null;
   made = false;
