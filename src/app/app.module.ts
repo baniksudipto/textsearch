@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
+import { ViewtrieComponent } from './components/viewtrie/viewtrie.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewtrieComponent
   ],
     imports: [
         BrowserModule,

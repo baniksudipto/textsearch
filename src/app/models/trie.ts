@@ -41,7 +41,8 @@ export class Trie {
     if (!this.caseSensitive) {
       word = word.toLowerCase();
     }
-    return this.searchNode(word).indexes;
+    const node = this.searchNode(word);
+    return node ? node.indexes : [];
   }
 
   listAll() {
@@ -55,6 +56,10 @@ export class Trie {
   //   return words;
   // }
 
+  getRoot(){
+    return this.root;
+  }
+
   reset() {
     delete this.root;
     this.root = new TrieNode('');
@@ -65,10 +70,7 @@ export class Trie {
       prefix = prefix.toLowerCase();
     }
     const prefixNode = this.searchNode(prefix);
-    if (!prefixNode) {
-      return [];
-    }
-    return prefixNode.getAllIndexes();
+    return prefixNode ? prefixNode.getAllIndexes() : [];
   }
 
   // bfs(){

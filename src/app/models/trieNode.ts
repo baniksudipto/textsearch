@@ -1,6 +1,6 @@
 export class TrieNode {
   children: any;
-  private readonly letter: any;
+  letter: any;
   indexes: number[];
 
   constructor(letter, _caseSensitive: boolean = false) {

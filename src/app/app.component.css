@@ -3,12 +3,21 @@
   margin-bottom: -1rem;
 
 }
+@keyframes fadeIn{
+  from{
+    opacity: 0.1;
+  }to{
+    opacity: 1;
+  }
+}
+
 .wrapped {
   height: 60vh;
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
   resize: none;
+  animation: fadeIn 0.2s ease-in-out;
 }
 
 .word {

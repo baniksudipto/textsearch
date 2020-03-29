@@ -1,0 +1,24 @@
+@keyframes fadeIn{
+  from{
+    opacity: 0.1;
+  }to{
+    opacity: 1;
+  }
+}
+
+.trie-node{
+  animation: fadeIn 0.2s ease-in;
+}
+.pre-padding{
+  padding: 0.2rem;
+  padding-left: 3rem;
+  border-left: 1px solid rgba(0,0,0,0.1);
+}
+.letter{
+  padding: 0.05rem 1rem;
+  background-color: rgba(230,260,230,0.3);
+  /* border-left: 2px solid rgba(0,0,0,0.3); */
+  font-size: 0.8em;
+  color: black;
+  font-weight: 500;
+}

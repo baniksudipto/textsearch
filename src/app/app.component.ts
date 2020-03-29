@@ -9,11 +9,12 @@ import {Trie} from './models/trie';
 })
 export class AppComponent implements OnInit {
   title = 'textsearch';
-  textData = '';
+  textData = 'hi hola hello';
   words: string[] = [];
   highlighted: Set<number> = null;
   made = false;
   wordCount = 0;
+  textView = true;
 
   trie: Trie = null;
   searchedWord = '';
@@ -28,6 +29,9 @@ export class AppComponent implements OnInit {
   }
 
   make() {
+    if(this.textData.trim().length==0){
+      return;
+    }
     this.words = this.textData
       .replace(/[^a-zA-Z ]/g, ' ').split(/(\s+)/)
       .filter(function (e) {
@@ -63,9 +67,13 @@ export class AppComponent implements OnInit {
   }
 
   prefixSearch() {
-    const indexes = this.trie.prefixSearch(this.searchedWord);
+    const indexes = this.trie.prefixSearch(this.searchedWord) || [];
     this.highlighted.clear();
     this.highlighted = new Set<number>(indexes);
     this.setWordCount(indexes.length);
+  }
+
+  toggleTextView(){
+    this.textView = !this.textView;
   }
 }

@@ -1,0 +1,6 @@
+<div class="trie-node">
+  <div *ngIf="validLetter" class="letter">{{trieNode.letter}}</div>
+  <div class="pre-padding" *ngFor="let item of getChildren()">
+      <app-viewtrie [trieNode]="item"></app-viewtrie>
+  </div>
+</div>
